@@ -52,7 +52,7 @@ content_map = {
         export const metadata: Metadata = {
           title: {
             template: '%s | innorag Technologies',
-            default: 'innorag Technologies - Retrieve, Augment, Generate',
+            default: 'innorag Technologies - Retrieve |> Augment |> Generate',
           },
           description: "innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
         };
@@ -101,7 +101,7 @@ content_map = {
               {/* Hero Section */}
               <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 mb-4 tracking-tight">
-                  Retrieve, Augment, Generate
+                  Retrieve |> Augment |> Generate
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
                   A Future Forged by Data and AI. We transform business through intelligent innovation.
@@ -183,7 +183,7 @@ content_map = {
                 <section>
                   <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Name, Our Mission</h2>
                   <p className="leading-relaxed">
-                    <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
+                    <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve |> Augment |> Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
                   </p>
                   <p className="mt-4 leading-relaxed">
                     The term has no dictionary meaning and symbolises continuous innovation across AI, data, and emerging technologies.
@@ -254,7 +254,7 @@ content_map = {
               <div className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4">Our Services: A Framework for Innovation</h1>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  All <InnoragLogo /> services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
+                  All <InnoragLogo /> services are built on our &quot;Retrieve |> Augment |> Generate&quot; philosophy to deliver tangible results and drive your business forward.
                 </p>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
