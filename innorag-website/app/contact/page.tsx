@@ -12,6 +12,11 @@ export default function ContactPage() {
         <p className="text-lg text-slate-600">
           Have a project in mind or want to learn more? We&apos;d love to hear from you.
         </p>
+        <div className="mt-4 text-lg">
+          <a href="mailto:contact@innorag.com" className="font-semibold text-blue-600 hover:underline">
+            contact@innorag.com
+          </a>
+        </div>
       </div>
 
       <div className="bg-white p-8 rounded-lg shadow-lg">
