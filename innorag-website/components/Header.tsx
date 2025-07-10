@@ -11,6 +11,16 @@ const navLinks = [
   { name: 'Contact', href: '/contact' },
 ];
 
+const InnoragLogo = () => (
+  <span className="text-2xl font-bold not-italic flex items-center gap-1">
+    <span className="bg-black text-white px-2 py-0.5 rounded-md">
+      <i>i</i>
+    </span>
+    <span className="text-black">nnorag</span>
+    <span className="text-orange-600">.</span>
+  </span>
+);
+
 export default function Header() {
   const pathname = usePathname();
 
@@ -19,8 +29,8 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-slate-900 not-italic">
-              <i>i</i>nnorag<span className="text-blue-600">.</span>
+            <Link href="/">
+              <InnoragLogo />
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
@@ -31,7 +41,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   className={`text-base font-medium transition-colors ${
-                    isActive ? 'text-blue-600 font-semibold' : 'text-slate-500 hover:text-blue-600'
+                    isActive ? 'text-orange-600 font-semibold' : 'text-slate-500 hover:text-orange-600'
                   }`}
                 >
                   {link.name}

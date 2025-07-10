@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Explore our services in software support, data analytics, and research & development.',
 };
 
+const InnoragLogo = () => (
+    <span className="inline-flex items-center gap-1 font-bold not-italic text-sm">
+        <span className="bg-black text-white px-1.5 py-0.5 rounded"><i>i</i></span>
+        <span className="text-black">nnorag</span>
+        <span className="text-orange-600">.</span>
+    </span>
+);
+
 const services = [
   {
     title: "Software Support & Maintenance",
@@ -32,9 +40,9 @@ export default function ServicesHubPage() {
   return (
     <div>
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Our Services: A Framework for Innovation</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4">Our Services: A Framework for Innovation</h1>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          All <i>i</i>nnorag services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
+          All <InnoragLogo /> services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
         </p>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">

@@ -18,7 +18,7 @@ const features = [
 export default function ResearchPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Research & Development Partnerships</h1>
+      <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Research & Development Partnerships</h1>
       <p className="text-lg text-slate-600 mb-10">Partner with us to explore the frontiers of technology and turn ambitious ideas into market-ready innovations.</p>
 
       <div className="bg-white p-8 rounded-lg shadow-lg">

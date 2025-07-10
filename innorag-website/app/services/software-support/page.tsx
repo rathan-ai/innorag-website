@@ -18,7 +18,7 @@ const features = [
 export default function SoftwareSupportPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Comprehensive Software Support & Maintenance</h1>
+      <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Comprehensive Software Support & Maintenance</h1>
       <p className="text-lg text-slate-600 mb-10">We ensure your software solutions run smoothly, efficiently, and reliably, so you can focus on your core business.</p>
 
       <div className="bg-white p-8 rounded-lg shadow-lg">

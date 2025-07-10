@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Contact Us</h1>
+        <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Contact Us</h1>
         <p className="text-lg text-slate-600">
           Have a project in mind or want to learn more? We&apos;d love to hear from you.
         </p>

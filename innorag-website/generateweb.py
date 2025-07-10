@@ -83,13 +83,25 @@ content_map = {
         import Link from 'next/link';
         import { ArrowRight } from 'lucide-react'; // A popular icon library
 
+        const RetrieveIcon = () => (
+          <svg className="w-12 h-12 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7M4 7c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2M4 7h16m-4 4h-8"></path></svg>
+        );
+        
+        const AugmentIcon = () => (
+            <svg className="w-12 h-12 mx-auto mb-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.5 2.5l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5 1.5-3z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.5 13.5l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5 1.5-3z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.5 10.5l-2-1 2-1 1-2 1 2 2 1-2 1-1 2z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l-8 8"></path></svg>
+        );
+        
+        const GenerateIcon = () => (
+          <svg className="w-12 h-12 mx-auto mb-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+        );
+
         export default function HomePage() {
           return (
             <div className="space-y-24">
               {/* Hero Section */}
               <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
-                <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 tracking-tight">
-                  <i>i</i>nnorag: Retrieve, Augment, Generate
+                <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 mb-4 tracking-tight">
+                  Retrieve, Augment, Generate
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
                   A Future Forged by Data and AI. We transform business through intelligent innovation.
@@ -107,16 +119,22 @@ content_map = {
               <section className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Core Philosophy</h2>
                 <div className="grid md:grid-cols-3 gap-8">
+                  {/* Retrieve Card */}
                   <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <h3 className="text-2xl font-semibold mb-3">Retrieve</h3>
+                    <RetrieveIcon />
+                    <h3 className="text-2xl font-semibold mb-3 text-blue-600">Retrieve</h3>
                     <p className="text-slate-600">We start by understanding and retrieving essential knowledge and data from complex systems, laying a solid foundation for innovation.</p>
                   </div>
+                  {/* Augment Card */}
                   <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <h3 className="text-2xl font-semibold mb-3">Augment</h3>
+                    <AugmentIcon />
+                    <h3 className="text-2xl font-semibold mb-3 text-purple-600">Augment</h3>
                     <p className="text-slate-600">We enhance and enrich this data with advanced analytics, machine learning, and cutting-edge technology to uncover deeper insights.</p>
                   </div>
+                  {/* Generate Card */}
                   <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <h3 className="text-2xl font-semibold mb-3">Generate</h3>
+                    <GenerateIcon />
+                    <h3 className="text-2xl font-semibold mb-3 text-green-600">Generate</h3>
                     <p className="text-slate-600">We generate novel solutions, actionable strategies, and new opportunities, creating tangible value and driving progress.</p>
                   </div>
                 </div>
@@ -147,17 +165,25 @@ content_map = {
           title: 'About Us',
           description: 'Learn about the story, mission, and vision of innorag Technologies.',
         };
+        
+        const InnoragLogo = () => (
+            <span className="inline-flex items-center gap-1 font-bold not-italic">
+                <span className="bg-black text-white px-2 py-0.5 rounded-md"><i>i</i></span>
+                <span className="text-black">nnorag</span>
+                <span className="text-orange-600">.</span>
+            </span>
+        );
 
         export default function AboutPage() {
           return (
             <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
-              <h1 className="text-4xl font-extrabold text-slate-900 mb-8 border-b pb-4">About <i>i</i>nnorag: The Genesis of Innovation</h1>
+              <h1 className="text-4xl font-extrabold text-orange-600 mb-8 border-b pb-4">About <InnoragLogo />: The Genesis of Innovation</h1>
 
               <div className="space-y-10 text-lg text-slate-700">
                 <section>
                   <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Name, Our Mission</h2>
                   <p className="leading-relaxed">
-                    <strong><i>i</i>nnorag</strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
+                    <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
                   </p>
                   <p className="mt-4 leading-relaxed">
                     The term has no dictionary meaning and symbolises continuous innovation across AI, data, and emerging technologies.
@@ -192,6 +218,14 @@ content_map = {
           title: 'Our Services',
           description: 'Explore our services in software support, data analytics, and research & development.',
         };
+        
+        const InnoragLogo = () => (
+            <span className="inline-flex items-center gap-1 font-bold not-italic text-sm">
+                <span className="bg-black text-white px-1.5 py-0.5 rounded"><i>i</i></span>
+                <span className="text-black">nnorag</span>
+                <span className="text-orange-600">.</span>
+            </span>
+        );
 
         const services = [
           {
@@ -218,9 +252,9 @@ content_map = {
           return (
             <div>
               <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Our Services: A Framework for Innovation</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4">Our Services: A Framework for Innovation</h1>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  All <i>i</i>nnorag services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
+                  All <InnoragLogo /> services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
                 </p>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
@@ -260,7 +294,7 @@ content_map = {
         export default function SoftwareSupportPage() {
           return (
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Comprehensive Software Support & Maintenance</h1>
+              <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Comprehensive Software Support & Maintenance</h1>
               <p className="text-lg text-slate-600 mb-10">We ensure your software solutions run smoothly, efficiently, and reliably, so you can focus on your core business.</p>
 
               <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -307,7 +341,7 @@ content_map = {
         export default function DataAnalyticsPage() {
           return (
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Data Processing & Advanced Analytics</h1>
+              <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Data Processing & Advanced Analytics</h1>
               <p className="text-lg text-slate-600 mb-10">We turn your complex data into clear, actionable insights that drive strategic decisions and business growth.</p>
 
               <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -354,7 +388,7 @@ content_map = {
         export default function ResearchPage() {
           return (
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Research & Development Partnerships</h1>
+              <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Research & Development Partnerships</h1>
               <p className="text-lg text-slate-600 mb-10">Partner with us to explore the frontiers of technology and turn ambitious ideas into market-ready innovations.</p>
 
               <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -391,7 +425,7 @@ content_map = {
           return (
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-12">
-                <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Contact Us</h1>
+                <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Contact Us</h1>
                 <p className="text-lg text-slate-600">
                   Have a project in mind or want to learn more? We&apos;d love to hear from you.
                 </p>
@@ -436,6 +470,16 @@ content_map = {
           { name: 'About Us', href: '/about' },
           { name: 'Contact', href: '/contact' },
         ];
+        
+        const InnoragLogo = () => (
+          <span className="text-2xl font-bold not-italic flex items-center gap-1">
+            <span className="bg-black text-white px-2 py-0.5 rounded-md">
+              <i>i</i>
+            </span>
+            <span className="text-black">nnorag</span>
+            <span className="text-orange-600">.</span>
+          </span>
+        );
 
         export default function Header() {
           const pathname = usePathname();
@@ -445,8 +489,8 @@ content_map = {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                   <div className="flex-shrink-0">
-                    <Link href="/" className="text-2xl font-bold text-slate-900 not-italic">
-                      <i>i</i>nnorag<span className="text-blue-600">.</span>
+                    <Link href="/">
+                      <InnoragLogo />
                     </Link>
                   </div>
                   <nav className="hidden md:flex space-x-8">
@@ -457,7 +501,7 @@ content_map = {
                           key={link.name}
                           href={link.href}
                           className={`text-base font-medium transition-colors ${
-                            isActive ? 'text-blue-600 font-semibold' : 'text-slate-500 hover:text-blue-600'
+                            isActive ? 'text-orange-600 font-semibold' : 'text-slate-500 hover:text-orange-600'
                           }`}
                         >
                           {link.name}
@@ -475,13 +519,21 @@ content_map = {
 
     # 13. Footer Component
     "components/Footer.tsx": textwrap.dedent("""
+        const InnoragLogo = () => (
+            <span className="inline-flex items-center gap-1 font-bold not-italic">
+                <span className="bg-black text-white px-1.5 py-0.5 rounded"><i>i</i></span>
+                <span className="text-black">nnorag</span>
+                <span className="text-orange-600">.</span>
+            </span>
+        );
+
         export default function Footer() {
           const currentYear = new Date().getFullYear();
 
           return (
             <footer className="bg-slate-100 border-t border-slate-200">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-500">
-                <p>&copy; {currentYear} <i>i</i>nnorag Technologies (OPC) Private Limited. All Rights Reserved.</p>
+                <p>&copy; {currentYear} <InnoragLogo /> Technologies (OPC) Private Limited. All Rights Reserved.</p>
               </div>
             </footer>
           );

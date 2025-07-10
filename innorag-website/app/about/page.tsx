@@ -6,16 +6,24 @@ export const metadata: Metadata = {
   description: 'Learn about the story, mission, and vision of innorag Technologies.',
 };
 
+const InnoragLogo = () => (
+    <span className="inline-flex items-center gap-1 font-bold not-italic">
+        <span className="bg-black text-white px-2 py-0.5 rounded-md"><i>i</i></span>
+        <span className="text-black">nnorag</span>
+        <span className="text-orange-600">.</span>
+    </span>
+);
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-extrabold text-slate-900 mb-8 border-b pb-4">About <i>i</i>nnorag: The Genesis of Innovation</h1>
+      <h1 className="text-4xl font-extrabold text-orange-600 mb-8 border-b pb-4">About <InnoragLogo />: The Genesis of Innovation</h1>
 
       <div className="space-y-10 text-lg text-slate-700">
         <section>
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Name, Our Mission</h2>
           <p className="leading-relaxed">
-            <strong><i>i</i>nnorag</strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
+            <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
           </p>
           <p className="mt-4 leading-relaxed">
             The term has no dictionary meaning and symbolises continuous innovation across AI, data, and emerging technologies.

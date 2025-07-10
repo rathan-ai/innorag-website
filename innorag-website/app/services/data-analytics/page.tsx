@@ -18,7 +18,7 @@ const features = [
 export default function DataAnalyticsPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Data Processing & Advanced Analytics</h1>
+      <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Data Processing & Advanced Analytics</h1>
       <p className="text-lg text-slate-600 mb-10">We turn your complex data into clear, actionable insights that drive strategic decisions and business growth.</p>
 
       <div className="bg-white p-8 rounded-lg shadow-lg">
