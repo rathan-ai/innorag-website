@@ -51,10 +51,10 @@ content_map = {
 
         export const metadata: Metadata = {
           title: {
-            template: '%s | Innorag Technologies',
-            default: 'Innorag Technologies - Retrieve, Augment, Generate',
+            template: '%s | innorag Technologies',
+            default: 'innorag Technologies - Retrieve, Augment, Generate',
           },
-          description: "Innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
+          description: "innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
         };
 
         export default function RootLayout({
@@ -89,7 +89,7 @@ content_map = {
               {/* Hero Section */}
               <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 tracking-tight">
-                  Innorag: Retrieve, Augment, Generate
+                  <i>i</i>nnorag: Retrieve, Augment, Generate
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
                   A Future Forged by Data and AI. We transform business through intelligent innovation.
@@ -103,7 +103,7 @@ content_map = {
                 </Link>
               </section>
 
-              {/* The Innorag Framework Section */}
+              {/* The innorag Framework Section */}
               <section className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Core Philosophy</h2>
                 <div className="grid md:grid-cols-3 gap-8">
@@ -145,19 +145,19 @@ content_map = {
 
         export const metadata: Metadata = {
           title: 'About Us',
-          description: 'Learn about the story, mission, and vision of Innorag Technologies.',
+          description: 'Learn about the story, mission, and vision of innorag Technologies.',
         };
 
         export default function AboutPage() {
           return (
             <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
-              <h1 className="text-4xl font-extrabold text-slate-900 mb-8 border-b pb-4">About Innorag: The Genesis of Innovation</h1>
+              <h1 className="text-4xl font-extrabold text-slate-900 mb-8 border-b pb-4">About <i>i</i>nnorag: The Genesis of Innovation</h1>
 
               <div className="space-y-10 text-lg text-slate-700">
                 <section>
                   <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Name, Our Mission</h2>
                   <p className="leading-relaxed">
-                    <strong>Innorag</strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
+                    <strong><i>i</i>nnorag</strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
                   </p>
                   <p className="mt-4 leading-relaxed">
                     The term has no dictionary meaning and symbolises continuous innovation across AI, data, and emerging technologies.
@@ -220,7 +220,7 @@ content_map = {
               <div className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Our Services: A Framework for Innovation</h1>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  All Innorag services are built on our "Retrieve, Augment, Generate" philosophy to deliver tangible results and drive your business forward.
+                  All <i>i</i>nnorag services are built on our &quot;Retrieve, Augment, Generate&quot; philosophy to deliver tangible results and drive your business forward.
                 </p>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
@@ -323,7 +323,7 @@ content_map = {
               </div>
 
                <div className="text-center mt-12 p-8 bg-slate-100 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">Ready to Unlock Your Data's Potential?</h3>
+                <h3 className="text-2xl font-bold mb-4">Ready to Unlock Your Data&apos;s Potential?</h3>
                 <Link href="/contact" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                   Start Your Data-Driven Journey
                 </Link>
@@ -382,19 +382,18 @@ content_map = {
     
     # 11. Contact Page
     "app/contact/page.tsx": textwrap.dedent("""
-        import type { Metadata } from 'next';
+        export const metadata = {
+          title: 'Contact Us',
+          description: 'Get in touch with innorag Technologies to discuss your project.',
+        };
 
         export default function ContactPage() {
-          // Note: This is a frontend-only form. 
-          // To make it work, you'll need to create a Next.js API route 
-          // or use a third-party service like Formspree or Resend.
-          
           return (
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-12">
                 <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Contact Us</h1>
                 <p className="text-lg text-slate-600">
-                  Have a project in mind or want to learn more? We'd love to hear from you.
+                  Have a project in mind or want to learn more? We&apos;d love to hear from you.
                 </p>
               </div>
 
@@ -446,8 +445,8 @@ content_map = {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                   <div className="flex-shrink-0">
-                    <Link href="/" className="text-2xl font-bold text-slate-900">
-                      Innorag<span className="text-blue-600">.</span>
+                    <Link href="/" className="text-2xl font-bold text-slate-900 not-italic">
+                      <i>i</i>nnorag<span className="text-blue-600">.</span>
                     </Link>
                   </div>
                   <nav className="hidden md:flex space-x-8">
@@ -482,7 +481,7 @@ content_map = {
           return (
             <footer className="bg-slate-100 border-t border-slate-200">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-500">
-                <p>&copy; {currentYear} Innorag Technologies (OPC) Private Limited. All Rights Reserved.</p>
+                <p>&copy; {currentYear} <i>i</i>nnorag Technologies (OPC) Private Limited. All Rights Reserved.</p>
               </div>
             </footer>
           );
@@ -492,7 +491,7 @@ content_map = {
 
 def create_files():
     """
-    Creates the directory structure and files for the Innorag website.
+    Creates the directory structure and files for the innorag website.
     """
     print("Starting website scaffolding...")
 

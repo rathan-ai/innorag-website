@@ -34,7 +34,7 @@ export default function DataAnalyticsPage() {
       </div>
 
        <div className="text-center mt-12 p-8 bg-slate-100 rounded-lg">
-        <h3 className="text-2xl font-bold mb-4">Ready to Unlock Your Data's Potential?</h3>
+        <h3 className="text-2xl font-bold mb-4">Ready to Unlock Your Data&apos;s Potential?</h3>
         <Link href="/contact" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
           Start Your Data-Driven Journey
         </Link>

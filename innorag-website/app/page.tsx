@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Innorag: Retrieve, Augment, Generate
+          <i>i</i>nnorag: Retrieve, Augment, Generate
         </h1>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
           A Future Forged by Data and AI. We transform business through intelligent innovation.
@@ -22,7 +22,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* The Innorag Framework Section */}
+      {/* The innorag Framework Section */}
       <section className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Core Philosophy</h2>
         <div className="grid md:grid-cols-3 gap-8">

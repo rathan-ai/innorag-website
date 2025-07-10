@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Innorag Technologies',
-    default: 'Innorag Technologies - Retrieve, Augment, Generate',
+    template: '%s | innorag Technologies',
+    default: 'innorag Technologies - Retrieve, Augment, Generate',
   },
-  description: "Innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
+  description: "innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
 };
 
 export default function RootLayout({

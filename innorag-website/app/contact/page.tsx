@@ -1,17 +1,16 @@
 
-import type { Metadata } from 'next';
+export const metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with innorag Technologies to discuss your project.',
+};
 
 export default function ContactPage() {
-  // Note: This is a frontend-only form. 
-  // To make it work, you'll need to create a Next.js API route 
-  // or use a third-party service like Formspree or Resend.
-
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Contact Us</h1>
         <p className="text-lg text-slate-600">
-          Have a project in mind or want to learn more? We'd love to hear from you.
+          Have a project in mind or want to learn more? We&apos;d love to hear from you.
         </p>
       </div>
 

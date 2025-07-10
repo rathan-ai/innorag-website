@@ -19,8 +19,8 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-slate-900">
-              Innorag<span className="text-blue-600">.</span>
+            <Link href="/" className="text-2xl font-bold text-slate-900 not-italic">
+              <i>i</i>nnorag<span className="text-blue-600">.</span>
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
