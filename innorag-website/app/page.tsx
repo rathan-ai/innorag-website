@@ -20,7 +20,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
         <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 mb-4 tracking-tight">
-          Retrieve |> Augment |> Generate
+          Retrieve, Augment, Generate
         </h1>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
           A Future Forged by Data and AI. We transform business through intelligent innovation.
@@ -37,24 +37,36 @@ export default function HomePage() {
       {/* The innorag Framework Section */}
       <section className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Core Philosophy</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
           {/* Retrieve Card */}
-          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex-1 p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-center">
             <RetrieveIcon />
             <h3 className="text-2xl font-semibold mb-3 text-blue-600">Retrieve</h3>
-            <p className="text-slate-600">We start by understanding and retrieving essential knowledge and data from complex systems, laying a solid foundation for innovation.</p>
+            <p className="text-slate-600">We start by understanding and retrieving essential knowledge and data from complex systems.</p>
           </div>
+
+          {/* Arrow Connector */}
+          <div className="text-orange-500 transform rotate-90 md:rotate-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+
           {/* Augment Card */}
-          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex-1 p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-center">
             <AugmentIcon />
             <h3 className="text-2xl font-semibold mb-3 text-purple-600">Augment</h3>
-            <p className="text-slate-600">We enhance and enrich this data with advanced analytics, machine learning, and cutting-edge technology to uncover deeper insights.</p>
+            <p className="text-slate-600">We enhance this data with advanced analytics and cutting-edge technology to uncover deeper insights.</p>
           </div>
+
+          {/* Arrow Connector */}
+          <div className="text-orange-500 transform rotate-90 md:rotate-0">
+             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+
           {/* Generate Card */}
-          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex-1 p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-center">
             <GenerateIcon />
             <h3 className="text-2xl font-semibold mb-3 text-green-600">Generate</h3>
-            <p className="text-slate-600">We generate novel solutions, actionable strategies, and new opportunities, creating tangible value and driving progress.</p>
+            <p className="text-slate-600">We generate novel solutions and actionable strategies that create tangible value and drive progress.</p>
           </div>
         </div>
       </section>

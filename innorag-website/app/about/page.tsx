@@ -23,7 +23,7 @@ export default function AboutPage() {
         <section>
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Name, Our Mission</h2>
           <p className="leading-relaxed">
-            <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve |> Augment |> Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
+            <strong><InnoragLogo /></strong> is a coined term derived from <strong>Innovation</strong> combined with the conceptual framework of <strong>Retrieve, Augment, and Generate</strong>. It reflects the company’s mission to retrieve knowledge or data, augment it with advanced technology, and generate new solutions, ideas, or insights.
           </p>
           <p className="mt-4 leading-relaxed">
             The term has no dictionary meaning and symbolises continuous innovation across AI, data, and emerging technologies.
