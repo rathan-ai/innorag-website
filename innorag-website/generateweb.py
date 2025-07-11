@@ -43,6 +43,7 @@ content_map = {
     "app/layout.tsx": textwrap.dedent("""
         import type { Metadata } from "next";
         import { Inter } from "next/font/google";
+        import { Analytics } from "@vercel/analytics/react";
         import "./globals.css";
         import Header from "../components/Header";
         import Footer from "../components/Footer";
@@ -72,6 +73,7 @@ content_map = {
                   </main>
                   <Footer />
                 </div>
+                <Analytics />
               </body>
             </html>
           );
@@ -595,7 +597,7 @@ def create_files():
     print("\\n1. Stop your development server (Ctrl+C).")
     print("2. DELETE the '.next' folder AND the 'node_modules' folder from your project directory. This clears everything.")
     print("3. Copy and paste this ONE command into your terminal and press Enter to install the correct packages:")
-    print("   npm install lucide-react && npm install -D tailwindcss@^3.4.1 postcss@^8 autoprefixer@^10.4.1")
+    print("   npm install lucide-react @vercel/analytics && npm install -D tailwindcss@^3.4.1 postcss@^8 autoprefixer@^10.4.1")
     print("\\n4. After the installation is complete, start the server again:")
     print("   npm run dev")
     print("\\nYour website should now have the correct design.")
