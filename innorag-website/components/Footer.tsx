@@ -17,6 +17,10 @@ export default function Footer() {
         <div className="mt-2">
             <a href="mailto:contact@innorag.com" className="hover:underline">contact@innorag.com</a>
         </div>
+        <div className="mt-4 flex justify-center space-x-6 text-sm">
+          <a href="/privacy-policy" className="hover:underline hover:text-slate-700">Privacy Policy</a>
+          <a href="/terms-of-use" className="hover:underline hover:text-slate-700">Terms of Use</a>
+        </div>
       </div>
     </footer>
   );
