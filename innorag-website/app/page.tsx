@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react'; // A popular icon library
+import RAGTitle from '../components/RAGTitle';
 
 const RetrieveIcon = () => (
   <svg className="w-12 h-12 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7M4 7c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2M4 7h16m-4 4h-8"></path></svg>
@@ -19,8 +20,8 @@ export default function HomePage() {
     <div className="space-y-24">
       {/* Hero Section */}
       <section className="text-center py-20 md:py-28 rounded-xl bg-gradient-to-br from-blue-50 via-white to-slate-100">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 mb-4 tracking-tight">
-          Retrieve |> Augment |> Generate
+        <h1 className="mb-4">
+          <RAGTitle size="lg" animated={true} />
         </h1>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
           A Future Forged by Data and AI. We transform business through intelligent innovation.

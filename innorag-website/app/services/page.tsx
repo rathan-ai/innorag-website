@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import InnoragLogo from '../../components/InnoragLogo';
+import PipeOperator from '../../components/PipeOperator';
 
 export const metadata: Metadata = {
   title: 'Our Services',
@@ -35,7 +36,7 @@ export default function ServicesHubPage() {
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 mb-4">Our Services: A Framework for Innovation</h1>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          All <InnoragLogo size="sm" /> services are built on our &quot;Retrieve |> Augment |> Generate&quot; philosophy to deliver tangible results and drive your business forward.
+          All <InnoragLogo size="sm" /> services are built on our &quot;Retrieve <PipeOperator size="sm" /> Augment <PipeOperator size="sm" /> Generate&quot; philosophy to deliver tangible results and drive your business forward.
         </p>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
