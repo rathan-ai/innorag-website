@@ -1,18 +1,11 @@
 
 import type { Metadata } from 'next';
+import InnoragLogo from '../../components/InnoragLogo';
 
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about the story, mission, and vision of innorag Technologies.',
 };
-
-const InnoragLogo = () => (
-    <span className="inline-flex items-center gap-1 font-bold not-italic">
-        <span className="bg-black text-white px-2 py-0.5 rounded-md"><i>i</i></span>
-        <span className="text-black">nnorag</span>
-        <span className="text-orange-600">.</span>
-    </span>
-);
 
 export default function AboutPage() {
   return (

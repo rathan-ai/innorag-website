@@ -1,8 +1,11 @@
 
-'use client'; // This directive is needed for using hooks like usePathname
+'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import InnoragLogo from './InnoragLogo';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -11,28 +14,25 @@ const navLinks = [
   { name: 'Contact', href: '/contact' },
 ];
 
-const InnoragLogo = () => (
-  <span className="text-2xl font-bold not-italic flex items-center gap-1">
-    <span className="bg-black text-white px-2 py-0.5 rounded-md">
-      <i>i</i>
-    </span>
-    <span className="text-black">nnorag</span>
-    <span className="text-orange-600">.</span>
-  </span>
-);
-
 export default function Header() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <header className="bg-white/80 shadow-sm sticky top-0 z-50 backdrop-blur-lg border-b border-slate-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <Link href="/">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
               <InnoragLogo />
             </Link>
           </div>
+          
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (pathname.startsWith('/services') && link.href === '/services');
@@ -49,8 +49,41 @@ export default function Header() {
               );
             })}
           </nav>
-          {/* Mobile menu button can be added here */}
+
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 rounded-md text-slate-600 hover:text-orange-600 hover:bg-slate-100 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg">
+            <nav className="py-4 space-y-2">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href || (pathname.startsWith('/services') && link.href === '/services');
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-4 py-3 text-base font-medium transition-colors ${
+                      isActive 
+                        ? 'text-orange-600 font-semibold bg-orange-50 border-r-4 border-orange-600' 
+                        : 'text-slate-600 hover:text-orange-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
