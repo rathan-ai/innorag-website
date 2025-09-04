@@ -22,10 +22,10 @@ export default function PipeOperator({ size = 'md', className = '', animated = t
   if (animated) {
     return (
       <span className={`${baseClasses} group`}>
-        <span className="text-purple-500 group-hover:text-blue-500 transform group-hover:scale-110 transition-all duration-500">
+        <span className="text-black group-hover:text-purple-500 transform group-hover:scale-110 transition-all duration-500">
           |
         </span>
-        <span className="text-orange-500 group-hover:text-green-500 transform group-hover:scale-110 transition-all duration-500 delay-100">
+        <span className="text-black group-hover:text-orange-500 transform group-hover:scale-110 transition-all duration-500 delay-100">
           &gt;
         </span>
       </span>
@@ -34,8 +34,8 @@ export default function PipeOperator({ size = 'md', className = '', animated = t
 
   return (
     <span className={baseClasses}>
-      <span className="text-purple-500">|</span>
-      <span className="text-orange-500">&gt;</span>
+      <span className="text-black">|</span>
+      <span className="text-black">&gt;</span>
     </span>
   );
 }
