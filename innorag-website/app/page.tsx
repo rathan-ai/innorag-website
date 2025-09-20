@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react'; // A popular icon library
 import RAGTitle from '../components/RAGTitle';
+import Partners from '../components/Partners';
 
 const RetrieveIcon = () => (
   <svg className="w-12 h-12 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7M4 7c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2M4 7h16m-4 4h-8"></path></svg>
@@ -71,6 +72,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <Partners />
 
       {/* Services Overview Section */}
       <section className="text-center bg-slate-100 py-20 rounded-xl">
