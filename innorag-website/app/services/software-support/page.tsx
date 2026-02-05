@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Software Support & Maintenance',
+  description: 'Comprehensive software support and maintenance services including troubleshooting, version upgrades, performance optimization, and annual maintenance contracts.',
 };
 
 const features = [

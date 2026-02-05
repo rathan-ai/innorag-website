@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Research & Development Partnerships',
+  description: 'Partner with innorag Technologies for R&D in AI, machine learning, robotics, and data science. We support academic and industrial collaboration and research commercialization.',
 };
 
 const features = [

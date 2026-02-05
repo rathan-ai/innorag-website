@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Data Processing & Advanced Analytics',
+  description: 'Transform complex data into actionable insights with our data processing and advanced analytics services including data visualization, database management, and data mining.',
 };
 
 const features = [

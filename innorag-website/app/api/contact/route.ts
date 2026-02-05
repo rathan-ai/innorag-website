@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { headers } from 'next/headers';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface ContactFormData {
   name: string;
@@ -18,11 +20,6 @@ function sanitizeInput(input: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    // Basic rate limiting check (in production, use proper rate limiting)
-    const headersList = await headers();
-    const forwardedFor = headersList.get('x-forwarded-for') || 'unknown';
-    
-    // Parse form data
     const body = await request.json();
     const { name, email, message }: ContactFormData = body;
 
@@ -56,30 +53,38 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanitize inputs
-    const sanitizedData = {
-      name: sanitizeInput(name),
-      email: sanitizeInput(email),
-      message: sanitizeInput(message),
-      timestamp: new Date().toISOString(),
-      ip: forwardedFor
-    };
+    const sanitizedName = sanitizeInput(name);
+    const sanitizedEmail = sanitizeInput(email);
+    const sanitizedMessage = sanitizeInput(message);
 
-    // In production, you would:
-    // 1. Send email using a service like SendGrid, Resend, or Nodemailer
-    // 2. Store in database
-    // 3. Add CSRF protection
-    // 4. Implement proper rate limiting
-    
-    // For now, we'll just log the data (remove in production)
-    console.log('Contact form submission:', sanitizedData);
+    const { error } = await resend.emails.send({
+      from: 'innorag Contact Form <contact@innorag.com>',
+      to: 'contact@innorag.com',
+      replyTo: sanitizedEmail,
+      subject: `New Contact Form Submission from ${sanitizedName}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${sanitizedName}</p>
+        <p><strong>Email:</strong> ${sanitizedEmail}</p>
+        <p><strong>Message:</strong></p>
+        <p>${sanitizedMessage}</p>
+        <hr />
+        <p style="color: #666; font-size: 12px;">Sent from innorag.com contact form at ${new Date().toISOString()}</p>
+      `,
+    });
 
-    // Simulate email sending delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (error) {
+      console.error('Resend error:', error);
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again later.' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
-      { 
+      {
         message: 'Thank you for your message! We\'ll get back to you soon.',
-        success: true 
+        success: true
       },
       { status: 200 }
     );
