@@ -76,6 +76,63 @@ export default function HomePage() {
       {/* Partners Section */}
       <Partners />
 
+      {/* Products Section */}
+      <section className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-12">
+          Intelligent platforms powered by data and AI
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* AlphaSutra */}
+          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left">
+            <div className="mb-4">
+              <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            </div>
+            <h3 className="text-2xl font-semibold mb-1 text-slate-800">AlphaSutra</h3>
+            <p className="text-sm font-medium text-blue-600 mb-4">AI-Powered Trading Assistant</p>
+            <p className="text-slate-600 mb-4">
+              An intelligent stock market trading platform that combines multiple AI models to generate consensus-driven trade signals for BankNifty options. Subscribers receive real-time trade alerts, daily market briefings, performance reports, and tax summaries — all delivered via WhatsApp.
+            </p>
+            <ul className="text-sm text-slate-500 space-y-2">
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Multi-AI consensus engine for trade signal generation</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Automated position monitoring and risk management</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Daily, weekly, and monthly P&L reports</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>End-of-year tax reporting with charge breakdowns</li>
+            </ul>
+          </div>
+
+          {/* AstraCelestia */}
+          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left">
+            <div className="mb-4">
+              <svg className="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+            </div>
+            <h3 className="text-2xl font-semibold mb-1 text-slate-800">AstraCelestia</h3>
+            <p className="text-sm font-medium text-purple-600 mb-4">Vedic Matchmaking & Ceremony Planning</p>
+            <p className="text-slate-600 mb-4">
+              A modern matchmaking platform rooted in Vedic astrology. Brokers and families can upload profiles, generate detailed birth charts, and receive intelligent compatibility analysis. Users stay engaged through WhatsApp notifications for new proposals, profile updates, and match recommendations.
+            </p>
+            <ul className="text-sm text-slate-500 space-y-2">
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Vedic birth chart generation and compatibility analysis</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Broker-managed profile listings</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Real-time WhatsApp notifications for proposals and updates</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Ceremony planning tools</li>
+            </ul>
+          </div>
+
+          {/* Founders Console */}
+          <div className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left flex flex-col">
+            <div className="mb-4">
+              <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            </div>
+            <h3 className="text-2xl font-semibold mb-1 text-slate-800">Founders Console</h3>
+            <p className="text-sm font-medium text-green-600 mb-4">Coming Soon</p>
+            <p className="text-slate-600">
+              Tools and insights for founders to build, measure, and scale their ventures.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview Section */}
       <section className="text-center bg-slate-100 py-20 rounded-xl">
          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
