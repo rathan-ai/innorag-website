@@ -107,15 +107,15 @@ export default function HomePage() {
               <svg className="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
             </div>
             <h3 className="text-2xl font-semibold mb-1 text-slate-800">AstraCelestia</h3>
-            <p className="text-sm font-medium text-purple-600 mb-4">Vedic Matchmaking & Ceremony Planning</p>
+            <p className="text-sm font-medium text-purple-600 mb-4">Multi-Faith Matchmaking & Ceremony Planning</p>
             <p className="text-slate-600 mb-4">
-              A modern matchmaking platform rooted in Vedic astrology. Brokers and families can upload profiles, generate detailed birth charts, and receive intelligent compatibility analysis. Users stay engaged through WhatsApp notifications for new proposals, profile updates, and match recommendations.
+              A modern matchmaking platform built for families and communities across faiths and religions. Brokers and families can upload profiles, generate compatibility insights, and discover meaningful matches rooted in their own traditions. Users stay engaged through WhatsApp notifications for new proposals, profile updates, and match recommendations.
             </p>
             <ul className="text-sm text-slate-500 space-y-2">
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Vedic birth chart generation and compatibility analysis</li>
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Broker-managed profile listings</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Multi-faith and multi-religion compatibility matching</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Broker-managed profile listings across communities</li>
               <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Real-time WhatsApp notifications for proposals and updates</li>
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Ceremony planning tools</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Tradition-specific ceremony planning tools</li>
             </ul>
           </div>
 
