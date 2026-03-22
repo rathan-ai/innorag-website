@@ -25,7 +25,7 @@ export default function HomePage() {
           <RAGTitle size="lg" animated={true} />
         </h1>
         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-          A Future Forged by Data and AI. We transform business through intelligent innovation.
+          Digital Transformation is not enough. It&apos;s time for AI Transformation. We build intelligent platforms that go beyond digitization — powered by data, driven by AI.
         </p>
         <Link 
           href="/contact" 

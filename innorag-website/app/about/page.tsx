@@ -27,7 +27,7 @@ export default function AboutPage() {
         <section className="p-6 bg-slate-50 rounded-lg border border-slate-200">
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Vision</h2>
           <p className="leading-relaxed">
-            Our vision is to be a trusted partner for businesses and institutions worldwide, pioneering the application of research and development to solve complex, real-world problems. We strive to create a future where data-driven insights and intelligent systems are accessible, efficient, and transformative.
+            Our vision is to lead the shift from Digital Transformation to AI Transformation — helping businesses and institutions worldwide move beyond digitization into truly intelligent operations. We strive to create a future where AI-powered platforms make data-driven insights accessible, efficient, and transformative.
           </p>
         </section>
 

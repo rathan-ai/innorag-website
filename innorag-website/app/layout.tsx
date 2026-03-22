@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: '%s | innorag Technologies',
     default: 'innorag Technologies - Retrieve |> Augment |> Generate',
   },
-  description: "innorag Technologies pioneers innovation in software support, data analytics, and R&D, turning complex data into strategic assets.",
+  description: "innorag Technologies drives AI Transformation for businesses ready to go beyond digital. We build intelligent platforms powered by data and AI across finance, matchmaking, and entrepreneurship.",
   keywords: [
     'data analytics',
     'software support',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: 'https://innorag.com',
     siteName: 'innorag Technologies',
     title: 'innorag Technologies - Retrieve |> Augment |> Generate',
-    description: 'Pioneer innovation in software support, data analytics, and R&D. We transform complex data into strategic assets through our Retrieve |> Augment |> Generate framework.',
+    description: 'Digital Transformation is not enough — it\'s time for AI Transformation. innorag builds intelligent platforms powered by data and AI through our Retrieve |> Augment |> Generate framework.',
     images: [
       {
         url: '/og-image.jpg',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'innorag Technologies - Retrieve |> Augment |> Generate',
-    description: 'Pioneer innovation in software support, data analytics, and R&D. Transform complex data into strategic assets.',
+    description: 'Digital Transformation is not enough — it\'s time for AI Transformation. We build intelligent platforms powered by data and AI.',
     images: ['/twitter-image.jpg'],
     creator: '@innorag',
   },
