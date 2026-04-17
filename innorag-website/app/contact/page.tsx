@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function ContactPage() {
@@ -55,7 +56,12 @@ export default function ContactPage() {
   };
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1 className="text-4xl font-extrabold text-orange-600 mb-4">Contact Us</h1>
         <p className="text-lg text-slate-600">
           Have a project in mind or want to learn more? We&apos;d love to hear from you.
@@ -65,9 +71,14 @@ export default function ContactPage() {
             contact@innorag.com
           </a>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="bg-white p-8 rounded-lg shadow-lg">
+      <motion.div
+        className="bg-white p-8 rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         {/* Status Messages */}
         {submitStatus === 'success' && (
           <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-md">
@@ -144,7 +155,7 @@ export default function ContactPage() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }

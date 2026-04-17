@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import InnoragLogo from './InnoragLogo';
 
 const navLinks = [
@@ -31,7 +32,7 @@ export default function Header() {
               <InnoragLogo />
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => {
@@ -61,29 +62,43 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg">
-            <nav className="py-4 space-y-2">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href || (pathname.startsWith('/services') && link.href === '/services');
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-4 py-3 text-base font-medium transition-colors ${
-                      isActive 
-                        ? 'text-orange-600 font-semibold bg-orange-50 border-r-4 border-orange-600' 
-                        : 'text-slate-600 hover:text-orange-600 hover:bg-slate-50'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <nav className="py-4 space-y-2">
+                {navLinks.map((link, index) => {
+                  const isActive = pathname === link.href || (pathname.startsWith('/services') && link.href === '/services');
+                  return (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.08 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`block px-4 py-3 text-base font-medium transition-colors ${
+                          isActive
+                            ? 'text-orange-600 font-semibold bg-orange-50 border-r-4 border-orange-600'
+                            : 'text-slate-600 hover:text-orange-600 hover:bg-slate-50'
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
