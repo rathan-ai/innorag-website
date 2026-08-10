@@ -49,20 +49,11 @@ export const metadata: Metadata = {
     siteName: 'innorag Technologies',
     title: 'innorag Technologies - Retrieve |> Augment |> Generate',
     description: 'Digital Transformation is not enough — it\'s time for AI Transformation. innorag builds intelligent platforms powered by data and AI through our Retrieve |> Augment |> Generate framework.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'innorag Technologies - Data-Driven Innovation',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'innorag Technologies - Retrieve |> Augment |> Generate',
     description: 'Digital Transformation is not enough — it\'s time for AI Transformation. We build intelligent platforms powered by data and AI.',
-    images: ['/twitter-image.jpg'],
     creator: '@innorag',
   },
   verification: {

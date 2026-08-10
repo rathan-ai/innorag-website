@@ -9,13 +9,17 @@ const Partners = () => {
       name: 'Databricks',
       logo: '/databricks-logo.svg',
       description: 'Unified Data Analytics Platform',
-      href: 'https://databricks.com'
+      href: 'https://databricks.com',
+      width: 180,
+      height: 30
     },
     {
       name: 'Razorpay',
-      logo: '/razorpay_logo.jpeg',
+      logo: '/razorpay-logo.svg',
       description: 'Complete Payment Solutions',
-      href: 'https://razorpay.com'
+      href: 'https://razorpay.com',
+      width: 180,
+      height: 38
     }
   ];
 
@@ -41,9 +45,9 @@ const Partners = () => {
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  width={180}
-                  height={60}
-                  className="opacity-80 group-hover:opacity-100 transition-opacity"
+                  width={partner.width}
+                  height={partner.height}
+                  className="max-h-full w-auto opacity-80 group-hover:opacity-100 transition-opacity"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">{partner.name}</h3>
