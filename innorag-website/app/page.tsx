@@ -106,52 +106,61 @@ export default function HomePage() {
           </p>
         </AnimatedSection>
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* AlphaSutra */}
+          {/* CleverBrio */}
           <StaggerItem className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left">
             <div className="mb-4">
-              <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7c0-1.657 3.582-3 8-3s8 1.343 8 3m-16 0c0 1.657 3.582 3 8 3s8-1.343 8-3m-16 0v10c0 1.657 3.582 3 8 3s8-1.343 8-3V7m-16 5c0 1.657 3.582 3 8 3s8-1.343 8-3"></path></svg>
             </div>
-            <h3 className="text-2xl font-semibold mb-1 text-slate-800">AlphaSutra</h3>
-            <p className="text-sm font-medium text-blue-600 mb-4">AI-Powered Trading Assistant</p>
+            <h3 className="text-2xl font-semibold mb-1 text-slate-800">CleverBrio</h3>
+            <p className="text-sm font-medium text-blue-600 mb-4">Data Lakehouse for SMBs</p>
             <p className="text-slate-600 mb-4">
-              An intelligent stock market trading platform that combines multiple AI models to generate consensus-driven trade signals for BankNifty options. Subscribers receive real-time trade alerts, daily market briefings, performance reports, and tax summaries — all delivered via WhatsApp.
+              A multi-tenant data lakehouse platform that gives small and growing businesses enterprise-grade analytics, storage, and governance without the enterprise complexity. Built on open standards — Apache Iceberg, Trino, and Superset — with compliance and cost controls designed in from day one.
             </p>
             <ul className="text-sm text-slate-500 space-y-2">
-              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Multi-AI consensus engine for trade signal generation</li>
-              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Automated position monitoring and risk management</li>
-              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Daily, weekly, and monthly P&L reports</li>
-              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>End-of-year tax reporting with charge breakdowns</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Open lakehouse stack — Iceberg tables, distributed SQL, and rich dashboards</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Governance and GDPR compliance by default, with audit trails and row-level security</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Lifecycle management with hot-to-archive tiering and retention policies to control cost</li>
+              <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">&#10003;</span>Browser-based workbench — drop a CSV, Parquet, or JSON file and query it instantly</li>
             </ul>
           </StaggerItem>
 
-          {/* AstraCelestia */}
+          {/* Ambitous */}
           <StaggerItem className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left">
             <div className="mb-4">
-              <svg className="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+              <svg className="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
             </div>
-            <h3 className="text-2xl font-semibold mb-1 text-slate-800">AstraCelestia</h3>
-            <p className="text-sm font-medium text-purple-600 mb-4">Multi-Faith Matchmaking & Ceremony Planning</p>
+            <h3 className="text-2xl font-semibold mb-1 text-slate-800">Ambitous</h3>
+            <p className="text-sm font-medium text-purple-600 mb-4">Codebase Intelligence with Grounded Answers</p>
             <p className="text-slate-600 mb-4">
-              A modern matchmaking platform built for families and communities across faiths and religions. Brokers and families can upload profiles, generate compatibility insights, and discover meaningful matches rooted in their own traditions. Users stay engaged through WhatsApp notifications for new proposals, profile updates, and match recommendations.
+              Ask your codebase anything and get verified answers with file:line citations — no hallucination. Ambitous indexes your repositories, issues, pull requests, and schemas, and exposes that grounded context to coding agents like Claude Code and Cursor over MCP.
             </p>
             <ul className="text-sm text-slate-500 space-y-2">
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Multi-faith and multi-religion compatibility matching</li>
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Broker-managed profile listings across communities</li>
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Real-time WhatsApp notifications for proposals and updates</li>
-              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Tradition-specific ceremony planning tools</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Chain-of-Verification Q&A with file:line citations on every answer</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Hybrid retrieval — semantic embeddings plus keyword search, refined by a reranker</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>Indexes issues, PRs, commits, and database schemas alongside code</li>
+              <li className="flex items-start gap-2"><span className="text-purple-500 mt-0.5">&#10003;</span>MCP server keeps coding agents working with current, grounded project context</li>
             </ul>
           </StaggerItem>
 
           {/* Founders Console */}
-          <StaggerItem className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left flex flex-col">
+          <StaggerItem className="p-8 border border-slate-200 rounded-lg bg-white shadow-sm text-left">
             <div className="mb-4">
-              <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+              <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-            <h3 className="text-2xl font-semibold mb-1 text-slate-800">Founders Console</h3>
-            <p className="text-sm font-medium text-green-600 mb-4">Coming Soon</p>
-            <p className="text-slate-600">
-              Tools and insights for founders to build, measure, and scale their ventures.
+            <div className="flex items-center gap-2 mb-1">
+              <h3 className="text-2xl font-semibold text-slate-800">Founders Console</h3>
+              <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-0.5 rounded-full whitespace-nowrap">Private Beta</span>
+            </div>
+            <p className="text-sm font-medium text-green-600 mb-4">Compliance-First Platform for Indian Startups</p>
+            <p className="text-slate-600 mb-4">
+              Company incorporation and ongoing regulatory compliance for Indian startups and the professionals who serve them. Every decision comes from formal rules and planners with a full audit trail — never a black-box answer.
             </p>
+            <ul className="text-sm text-slate-500 space-y-2">
+              <li className="flex items-start gap-2"><span className="text-green-500 mt-0.5">&#10003;</span>Rules-as-code compliance logic with formal verification — every decision explainable</li>
+              <li className="flex items-start gap-2"><span className="text-green-500 mt-0.5">&#10003;</span>Step-by-step filing plans with full provenance for each recommendation</li>
+              <li className="flex items-start gap-2"><span className="text-green-500 mt-0.5">&#10003;</span>MCA, GST, and RBI integrations with document OCR and PDF generation</li>
+              <li className="flex items-start gap-2"><span className="text-green-500 mt-0.5">&#10003;</span>Marketplace connecting founders with verified CAs, CSs, and lawyers</li>
+            </ul>
           </StaggerItem>
         </StaggerContainer>
       </section>

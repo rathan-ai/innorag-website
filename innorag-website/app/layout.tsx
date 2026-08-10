@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: '%s | innorag Technologies',
     default: 'innorag Technologies - Retrieve |> Augment |> Generate',
   },
-  description: "innorag Technologies drives AI Transformation for businesses ready to go beyond digital. We build intelligent platforms powered by data and AI across finance, matchmaking, and entrepreneurship.",
+  description: "innorag Technologies drives AI Transformation for businesses ready to go beyond digital. We build intelligent platforms powered by data and AI across data infrastructure, codebase intelligence, and startup compliance.",
   keywords: [
     'data analytics',
     'software support',
@@ -23,7 +23,10 @@ export const metadata: Metadata = {
     'data processing',
     'machine learning',
     'technology consulting',
-    'innorag'
+    'innorag',
+    'CleverBrio',
+    'Ambitous',
+    'Founders Console'
   ],
   authors: [{ name: 'innorag Technologies' }],
   creator: 'innorag Technologies',
