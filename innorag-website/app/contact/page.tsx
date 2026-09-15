@@ -14,6 +14,12 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+  // Honeypot: real users never see or fill this field; bots that auto-fill every
+  // input will populate it, and we silently reject the submission server-side.
+  const [honeypot, setHoneypot] = useState('');
+  // Time-trap: records when the form was rendered. Bots typically submit within
+  // milliseconds; we reject submissions that come in faster than a human could type.
+  const [formLoadedAt] = useState(() => Date.now());
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,7 +40,11 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website: honeypot,
+          formLoadedAt,
+        }),
       });
 
       const data = await response.json();
@@ -99,6 +109,20 @@ export default function ContactPage() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot field: hidden from real users via CSS + off-screen positioning,
+              but visible to most bots that auto-fill all form fields. */}
+          <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              name="website"
+              id="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-slate-700">Full Name</label>
             <input 

@@ -5,6 +5,8 @@ interface ContactFormData {
   name: string;
   email: string;
   message: string;
+  website?: string; // honeypot - should always be empty
+  formLoadedAt?: number; // client timestamp for time-trap check
 }
 
 function validateEmail(email: string): boolean {
@@ -16,10 +18,71 @@ function sanitizeInput(input: string): string {
   return input.trim().replace(/[<>]/g, '');
 }
 
+// In-memory rate limiter. Good enough for a low-traffic contact form on a
+// single warm serverless instance; resets on cold start, which is an
+// acceptable tradeoff over adding an external store for this volume.
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const requestLog = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = (requestLog.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+  timestamps.push(now);
+  requestLog.set(ip, timestamps);
+
+  // Opportunistically prevent unbounded growth of the map.
+  if (requestLog.size > 5000) {
+    for (const [key, entries] of requestLog) {
+      if (entries.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) {
+        requestLog.delete(key);
+      }
+    }
+  }
+
+  return timestamps.length > RATE_LIMIT_MAX_REQUESTS;
+}
+
+function getClientIp(request: NextRequest): string {
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  if (forwardedFor) return forwardedFor.split(',')[0].trim();
+  return request.headers.get('x-real-ip') ?? 'unknown';
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request);
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
-    const { name, email, message }: ContactFormData = body;
+    const { name, email, message, website, formLoadedAt }: ContactFormData = body;
+
+    // Honeypot: a real user never sees or fills this field. Any bot that
+    // auto-fills every input trips it. Respond as if successful so bots
+    // don't learn to leave it blank.
+    if (website) {
+      return NextResponse.json(
+        { message: 'Thank you for your message! We\'ll get back to you soon.', success: true },
+        { status: 200 }
+      );
+    }
+
+    // Time-trap: a human needs at least a couple seconds to fill this form.
+    // Bots that submit near-instantly are silently accepted (not rejected,
+    // to avoid tipping them off) but never actually sent.
+    if (typeof formLoadedAt === 'number' && Date.now() - formLoadedAt < 2000) {
+      return NextResponse.json(
+        { message: 'Thank you for your message! We\'ll get back to you soon.', success: true },
+        { status: 200 }
+      );
+    }
 
     // Validation
     if (!name || !email || !message) {
