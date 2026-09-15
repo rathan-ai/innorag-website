@@ -1,9 +1,29 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import { motion } from 'framer-motion';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: string | HTMLElement,
+        options: {
+          sitekey: string;
+          callback: (token: string) => void;
+          'expired-callback'?: () => void;
+          'error-callback'?: () => void;
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -20,6 +40,23 @@ export default function ContactPage() {
   // Time-trap: records when the form was rendered. Bots typically submit within
   // milliseconds; we reject submissions that come in faster than a human could type.
   const [formLoadedAt] = useState(() => Date.now());
+  // Cloudflare Turnstile: proves a real browser/human is submitting.
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | undefined>(undefined);
+  const [turnstileScriptLoaded, setTurnstileScriptLoaded] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+
+  useEffect(() => {
+    if (!turnstileScriptLoaded || !turnstileContainerRef.current || !TURNSTILE_SITE_KEY) return;
+    if (!window.turnstile) return;
+
+    turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: (token: string) => setTurnstileToken(token),
+      'expired-callback': () => setTurnstileToken(''),
+      'error-callback': () => setTurnstileToken(''),
+    });
+  }, [turnstileScriptLoaded]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,8 +68,15 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitStatus('idle');
+
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setSubmitStatus('error');
+      setStatusMessage('Please complete the verification challenge before sending.');
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch('/api/contact', {
@@ -44,6 +88,7 @@ export default function ContactPage() {
           ...formData,
           website: honeypot,
           formLoadedAt,
+          turnstileToken,
         }),
       });
 
@@ -62,10 +107,21 @@ export default function ContactPage() {
       setStatusMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
+      setTurnstileToken('');
+      if (window.turnstile && turnstileWidgetIdRef.current) {
+        window.turnstile.reset(turnstileWidgetIdRef.current);
+      }
     }
   };
   return (
     <div className="max-w-2xl mx-auto">
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+          onLoad={() => setTurnstileScriptLoaded(true)}
+        />
+      )}
       <motion.div
         className="text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
@@ -162,10 +218,13 @@ export default function ContactPage() {
               className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-slate-50 disabled:text-slate-500"
             ></textarea>
           </div>
+          {TURNSTILE_SITE_KEY && (
+            <div ref={turnstileContainerRef} />
+          )}
           <div>
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
+            <button
+              type="submit"
+              disabled={isSubmitting || (!!TURNSTILE_SITE_KEY && !turnstileToken)}
               className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
             >
               {isSubmitting ? (

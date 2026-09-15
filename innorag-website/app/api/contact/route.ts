@@ -7,6 +7,28 @@ interface ContactFormData {
   message: string;
   website?: string; // honeypot - should always be empty
   formLoadedAt?: number; // client timestamp for time-trap check
+  turnstileToken?: string; // Cloudflare Turnstile response token
+}
+
+async function verifyTurnstileToken(token: string, ip: string): Promise<boolean> {
+  const secretKey = process.env.TURNSTILE_SECRET_KEY;
+  if (!secretKey) return true; // Turnstile not configured; skip verification
+
+  try {
+    const response = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret: secretKey, response: token, remoteip: ip }),
+      }
+    );
+    const data = await response.json();
+    return data.success === true;
+  } catch (err) {
+    console.error('Turnstile verification error:', err);
+    return false;
+  }
 }
 
 function validateEmail(email: string): boolean {
@@ -62,7 +84,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, email, message, website, formLoadedAt }: ContactFormData = body;
+    const { name, email, message, website, formLoadedAt, turnstileToken }: ContactFormData = body;
 
     // Honeypot: a real user never sees or fills this field. Any bot that
     // auto-fills every input trips it. Respond as if successful so bots
@@ -82,6 +104,16 @@ export async function POST(request: NextRequest) {
         { message: 'Thank you for your message! We\'ll get back to you soon.', success: true },
         { status: 200 }
       );
+    }
+
+    // Cloudflare Turnstile: verify the human-verification token server-side.
+    if (process.env.TURNSTILE_SECRET_KEY) {
+      if (!turnstileToken || !(await verifyTurnstileToken(turnstileToken, ip))) {
+        return NextResponse.json(
+          { error: 'Verification failed. Please try again.' },
+          { status: 400 }
+        );
+      }
     }
 
     // Validation
